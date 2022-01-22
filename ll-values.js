@@ -26,8 +26,8 @@ class Node {
 // };
 
 // ITER
-// T: O() 
-// S: O()
+// T: O(n) 
+// S: O(n)
 const linkedListValues = (head) => {
   const values = [];
   let node = head;
