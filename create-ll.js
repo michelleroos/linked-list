@@ -11,14 +11,23 @@ class Node {
   }
 }
 
-const createLinkedList = (values) => {
-  const dummy = new Node(null);
-  let tail = dummy;
-  for (let value of values) {
-    tail.next = new Node(value);
-    tail = tail.next;
-  };
-  return dummy.next;
+// // T: O(n) S: O(n)
+// const createLinkedList = (values) => {
+//   const dummy = new Node(null);
+//   let tail = dummy;
+//   for (let value of values) {
+//     tail.next = new Node(value);
+//     tail = tail.next;
+//   };
+//   return dummy.next;
+// };
+
+// // T: O(n) S: O(n)
+const createLinkedList = (values, i = 0) => {
+  if (i === values.length) return null;
+  const head = new Node(values[i]);
+  head.next = createLinkedList(values, i + 1);
+  return head;
 };
 
 // test_00:
